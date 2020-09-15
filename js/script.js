@@ -37,6 +37,7 @@ $(document).ready(function () {
     }
   }
 
+
   // Dare la possibilità all’utente attraverso 3 prompt di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
 
   var newName = prompt("Inserisci il nome dello studente");
@@ -47,6 +48,18 @@ $(document).ready(function () {
   var source = $("#entry-template").html();
   var template = Handlebars.compile(source);
 
+  for (var i = 0; i < classe.length; i++) {
+    for (var key in classe[i]) {
+      var student = {
+        "name": classe[i]["nome"],
+        "surname": classe[i]["cognome"],
+        "age": classe[i]["eta"]
+      }
+      var html = template(student);
+      $("#app").append(html);
+    }
+  }
+
   var newStudent = {
     "name": newName,
     "surname": newSurname,
@@ -54,4 +67,5 @@ $(document).ready(function () {
   };
   var html = template(newStudent);
   $("#app").append(html);
+
 });
