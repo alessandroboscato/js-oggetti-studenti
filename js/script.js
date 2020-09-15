@@ -14,14 +14,17 @@ var classe = [
   {
     "nome": "carlo",
     "cognome": "basso",
+    "eta": 25
   },
   {
     "nome": "luca",
     "cognome": "medio",
+    "eta": 27
   },
   {
     "nome": "lucia",
     "cognome": "alta",
+    "eta": 29
   }
 ];
 
@@ -32,3 +35,14 @@ for (var i = 0; i < classe.length; i++) {
 }
 
 // Dare la possibilità all’utente attraverso 3 prompt di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+
+var newName = prompt("Inserisci il nome dello studente");
+var newSurname = prompt("Inserisci il cognome dello studente");
+var newAge = prompt("Inserisci l'età dello studente");
+var newStudent = {
+  "nome": newName,
+  "cognome": newSurname,
+  "eta": newAge
+};
+classe.push(newStudent);
+console.log(classe);
