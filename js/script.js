@@ -42,24 +42,16 @@ $(document).ready(function () {
   var newName = prompt("Inserisci il nome dello studente");
   var newSurname = prompt("Inserisci il cognome dello studente");
   var newAge = prompt("Inserisci l'età dello studente");
-  var newStudent = {
-    "nome": newName,
-    "cognome": newSurname,
-    "eta": newAge
-  };
-  classe.push(newStudent);
-  console.log(classe);
 
   //RAPPRESENTAZIONE GRAFICA - HANDLEBARS
-
   var source = $("#entry-template").html();
   var template = Handlebars.compile(source);
 
-  var context = {
-    title: "My New Post",
-    body: "This is my first post!"
+  var newStudent = {
+    "name": newName,
+    "surname": newSurname,
+    "age": newAge
   };
-  var html = template(context);
-
-
+  var html = template(newStudent);
+  $("#app").append(html);
 });
