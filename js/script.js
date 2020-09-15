@@ -49,7 +49,6 @@ $(document).ready(function () {
   var template = Handlebars.compile(source);
 
   for (var i = 0; i < classe.length; i++) {
-    for (var key in classe[i]) {
       var student = {
         "name": classe[i]["nome"],
         "surname": classe[i]["cognome"],
@@ -57,7 +56,6 @@ $(document).ready(function () {
       }
       var html = template(student);
       $("#app").append(html);
-    }
   }
 
   var newStudent = {
